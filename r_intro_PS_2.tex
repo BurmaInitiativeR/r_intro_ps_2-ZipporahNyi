@@ -1,0 +1,349 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={r\_intro PS 2},
+  pdfauthor={Nicholus Tint Zaw},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{r\_intro PS 2}
+\author{Nicholus Tint Zaw}
+\date{2022-11-10}
+
+\begin{document}
+\maketitle
+
+\hypertarget{practice-summary-statistics-with-atomic-vector}{%
+\section{Practice Summary Statistics with atomic
+vector}\label{practice-summary-statistics-with-atomic-vector}}
+
+First thing first, you definitely need \texttt{tidyverse} pkg for this
+exercise. Don't forgot to load it at the top of your answer \texttt{rmd}
+file.
+
+Let's go back to the previous exercise on implementation of the sampling
+distribution of the means.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(tidyverse)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## -- Attaching core tidyverse packages ------------------------ tidyverse 2.0.0 --
+## v dplyr     1.1.3     v readr     2.1.4
+## v forcats   1.0.0     v stringr   1.5.0
+## v ggplot2   3.4.3     v tibble    3.2.1
+## v lubridate 1.9.2     v tidyr     1.3.0
+## v purrr     1.0.2     
+## -- Conflicts ------------------------------------------ tidyverse_conflicts() --
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()
+## i Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
+\end{verbatim}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Construct the list of 100 means values from the \texttt{Sepal.Length}
+  and each mean value should construct from 10 sample sizes. (sample
+  size = 10, replication 100 times)
+\item
+  Assigned the result (vector with 100 numbers) as vector name called
+  \texttt{means\_list} and .
+\item
+  Construct the another vector called \texttt{test} and assigned
+  \texttt{1} hundred time in that vector. Use \texttt{rep()} function
+  for generation of same value for 100 times.
+\item
+  Then, using \texttt{cbind} function to combined those two vectors''
+  \texttt{test} and \texttt{mean\_list}, and treat the result as
+  \texttt{data.frame} and assigned to the object name
+  \texttt{mean\_list\_1}. You can try with below demo.
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{df }\OtherTok{\textless{}{-}}\NormalTok{ iris }
+\NormalTok{means\_list }\OtherTok{\textless{}{-}} \FunctionTok{replicate}\NormalTok{(}\DecValTok{100}\NormalTok{, }\AttributeTok{expr =} \FunctionTok{mean}\NormalTok{(}\FunctionTok{sample}\NormalTok{( df}\SpecialCharTok{$}\NormalTok{Sepal.Length, }\DecValTok{10}\NormalTok{, }\AttributeTok{replace =} \ConstantTok{TRUE}\NormalTok{)))}
+\NormalTok{?rep  }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## starting httpd help server ... done
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{test }\OtherTok{\textless{}{-}} \FunctionTok{rep}\NormalTok{(}\DecValTok{1}\NormalTok{, }\AttributeTok{times =} \DecValTok{100}\NormalTok{)}
+\NormalTok{means\_list\_1 }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}\FunctionTok{cbind}\NormalTok{(test, means\_list))}
+\end{Highlighting}
+\end{Shaded}
+
+Repeat the same process from numbers 1 to 4, but using different sample
+size and replication number this time.
+
+\begin{itemize}
+\tightlist
+\item
+  for \texttt{means\_list\_2}, using a sample size 30 and replication
+  time 200.
+\item
+  for \texttt{means\_list\_3}, using a sample size 50 and replication
+  time 1,000.\\
+\item
+  for \texttt{means\_list\_4}, using a sample size 50 and replication
+  time 3,000.\\
+\item
+  for \texttt{means\_list\_5}, using a sample size 50 and replication
+  time 10,000.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{means\_list\_2 }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}\FunctionTok{cbind}\NormalTok{(test,}\StringTok{"means\_list"} \OtherTok{=} \FunctionTok{replicate}\NormalTok{( }\DecValTok{200}\NormalTok{, }\AttributeTok{expr =} \FunctionTok{mean}\NormalTok{(}\FunctionTok{sample}\NormalTok{(df}\SpecialCharTok{$}\NormalTok{Sepal.Length,}\DecValTok{30}\NormalTok{, }\AttributeTok{replace =} \ConstantTok{TRUE}\NormalTok{)))))}
+\NormalTok{means\_list\_3 }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}\FunctionTok{cbind}\NormalTok{(test,}\StringTok{"means\_list"} \OtherTok{=} \FunctionTok{replicate}\NormalTok{( }\DecValTok{1000}\NormalTok{, }\AttributeTok{expr =} \FunctionTok{mean}\NormalTok{(}\FunctionTok{sample}\NormalTok{(df}\SpecialCharTok{$}\NormalTok{Sepal.Length,}\DecValTok{50}\NormalTok{, }\AttributeTok{replace =} \ConstantTok{TRUE}\NormalTok{)))))}
+\NormalTok{means\_list\_4 }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}\FunctionTok{cbind}\NormalTok{(test,}\StringTok{"means\_list"} \OtherTok{=} \FunctionTok{replicate}\NormalTok{( }\DecValTok{3000}\NormalTok{, }\AttributeTok{expr =} \FunctionTok{mean}\NormalTok{(}\FunctionTok{sample}\NormalTok{(df}\SpecialCharTok{$}\NormalTok{Sepal.Length,}\DecValTok{50}\NormalTok{, }\AttributeTok{replace =} \ConstantTok{TRUE}\NormalTok{)))))}
+\NormalTok{means\_list\_5 }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}\FunctionTok{cbind}\NormalTok{(test,}\StringTok{"means\_list"} \OtherTok{=} \FunctionTok{replicate}\NormalTok{( }\DecValTok{10000}\NormalTok{, }\AttributeTok{expr =} \FunctionTok{mean}\NormalTok{(}\FunctionTok{sample}\NormalTok{(df}\SpecialCharTok{$}\NormalTok{Sepal.Length,}\DecValTok{50}\NormalTok{, }\AttributeTok{replace =} \ConstantTok{TRUE}\NormalTok{)))))}
+\end{Highlighting}
+\end{Shaded}
+
+This time, we are going to create the list to store all those
+\texttt{means\_list\_x} (where \texttt{x} \texttt{1:5}) and assigned
+that list as \texttt{means\_seris}. And, perform the following function
+from that list.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  calculate the mean of \texttt{means\_list\_x} (where \texttt{x}
+  \texttt{1:5}) from that list (using the command related to filtering
+  list from lecture 2.
+\end{enumerate}
+
+For example, if we use the following command, we can get the first
+dataframe. You work is to calculate the mean value of column
+\texttt{mean\_list}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{means\_series }\OtherTok{\textless{}{-}} \FunctionTok{list}\NormalTok{(means\_list\_1,means\_list\_2,means\_list\_3,means\_list\_4,means\_list\_5)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\# Mean for mean\_list\_1}
+\FunctionTok{mean}\NormalTok{(means\_series[[}\DecValTok{1}\NormalTok{]][[}\DecValTok{2}\NormalTok{]])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 5.8731
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\# Mean for mean\_list\_2}
+\FunctionTok{mean}\NormalTok{(means\_series[[}\DecValTok{2}\NormalTok{]][[}\DecValTok{2}\NormalTok{]])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 5.8687
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\# Mean for mean\_list\_3}
+\FunctionTok{mean}\NormalTok{(means\_series[[}\DecValTok{3}\NormalTok{]][[}\DecValTok{2}\NormalTok{]])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 5.839646
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\# Mean for mean\_list\_4}
+\FunctionTok{mean}\NormalTok{(means\_series[[}\DecValTok{4}\NormalTok{]][[}\DecValTok{2}\NormalTok{]])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 5.842723
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\# Mean for mean\_list\_5}
+\FunctionTok{mean}\NormalTok{(means\_series[[}\DecValTok{5}\NormalTok{]][[}\DecValTok{2}\NormalTok{]])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 5.843685
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{?bind\_rows}
+\NormalTok{df\_means\_combined }\OtherTok{\textless{}{-}} \FunctionTok{bind\_rows}\NormalTok{(means\_list\_1,means\_list\_2,means\_list\_3,means\_list\_4,means\_list\_5)}
+\FunctionTok{str}\NormalTok{(df\_means\_combined)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 'data.frame':    14300 obs. of  2 variables:
+##  $ test      : num  1 1 1 1 1 1 1 1 1 1 ...
+##  $ means_list: num  5.47 6.01 5.81 5.45 5.9 5.92 5.34 6.32 6.02 5.63 ...
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{View}\NormalTok{(df\_means\_combined)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\item
+  Using \texttt{bind\_rows()} function to combined all dataset from
+  \texttt{means\_seris} and assigned into object called
+  \texttt{df\_means\_combined}. Please make sure that your result
+  dataset should have \texttt{14300} observations and 2 variables;
+  \texttt{test} and \texttt{mean\_list}.
+\item
+  Finally, calculate the mean value for each group of \texttt{test}
+  using following example. In this exercise, we are going to use
+  \texttt{group\_by} function from the \texttt{tidyverse} packge and
+  \texttt{\%\textgreater{}\%} operator (pipe operator).
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(tidyverse)}
+
+\NormalTok{iris }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{group\_by}\NormalTok{(Species) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{summarise}\NormalTok{(}\AttributeTok{mean =} \FunctionTok{mean}\NormalTok{(Sepal.Length))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 3 x 2
+##   Species     mean
+##   <fct>      <dbl>
+## 1 setosa      5.01
+## 2 versicolor  5.94
+## 3 virginica   6.59
+\end{verbatim}
+
+\end{document}
